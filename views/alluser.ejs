@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/home.css">
+
+    <title>Welcome to INTERN</title>
+</head>
+
+<body>
+
+    <nav class="page__menu page__custom-settings menu">
+        <!-- <img class="logo" src="/images/logo.jpg"> -->
+        <ul class="menu__list r-list">
+
+            <li class="menu__group"><a href="/" class="menu__link r-link text-underlined">HOME</a></li>
+            <!-- <li class="menu__group"><a href="/details" class="menu__link r-link text-underlined">ALL USERS</a></li> -->
+            <li class="menu__group"><a href="/login" class="menu__link r-link text-underlined">LOGIN</a></li>
+            <li class="menu__group"><a href="/register" class="menu__link r-link text-underlined">REGISTER</a></li>
+        </ul>
+    </nav>
+
+    <div class="student"><br><br>
+
+        <div class="container">
+
+            <h1 class="my-h1">
+                User DATABASE
+            </h1>
+            <!-- <a href="/add" class="btn btn-sm btn-primary">Add Student</a> -->
+            <br>
+
+
+            <table class="table table-dark table-striped my-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Image</th>
+                        <th>Created At</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Last Logged</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user){ %>
+                        <tr>
+                            <td>
+                                <%= user.user_id %>
+                            </td>
+                            <td>
+                                <%= user.user_name %>
+                            </td>
+                            <td>
+                                <%= user.user_email %>
+                            </td>
+                            <td>
+                                <%= user.user_image %>
+                            </td>
+                            <td>
+                                <%= user.created_at %>
+                            </td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
+                            <td>
+                                <%= user.gender %>
+                            </td>
+                            <td>
+                                <%= user.last_logged %>
+                            </td>
+                            <!-- <td>
+                                <a href="present/<%= user.PRN %>" class="btn-pr">Present</a>
+                                <a href="absent/<%= user.PRN %>" class="btn-ab">Absent</a>
+                            </td>  -->
+                            <!-- <td>
+                                <a href="delete/<%= user.PRN %>" class="btn btn-sm btn-danger btn-del">Delete</a>
+                            </td> -->
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
